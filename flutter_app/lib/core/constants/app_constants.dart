@@ -5,7 +5,7 @@ class AppConstants {
   // GANTI URL INI DENGAN URL VERCEL KAMU SETELAH DEPLOY
   // Untuk development local: http://localhost:3000
   // ================================================
-  static const String baseUrl = 'https://second-chance-api.vercel.app';
+  static const String baseUrl = 'https://second-chance-zeta.vercel.app';
   // static const String baseUrl = 'http://localhost:3000'; // uncomment untuk dev
 
   // API Endpoints
