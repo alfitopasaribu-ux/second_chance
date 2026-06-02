@@ -1,0 +1,5 @@
+package com.secondchance.app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()

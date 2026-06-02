@@ -1,0 +1,28 @@
+========================================================
+SECOND CHANCE — CARA SETUP ENV DI VERCEL DASHBOARD
+========================================================
+
+Setelah deploy ke Vercel, tambahkan env variables ini
+di: Vercel Dashboard → Project → Settings → Environment Variables
+
+Tambahkan satu per satu:
+
+NAME                    VALUE
+----                    -----
+GROQ_API_KEY            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
+
+DATABASE_URL            postgresql://neondb_owner:npg_cAuvMXh2rFq9@ep-mute-salad-aopt7xit-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require
+
+DATABASE_URL_UNPOOLED   postgresql://neondb_owner:npg_cAuvMXh2rFq9@ep-mute-salad-aopt7xit.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+POSTGRES_URL            postgresql://neondb_owner:npg_cAuvMXh2rFq9@ep-mute-salad-aopt7xit-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require
+
+POSTGRES_URL_NON_POOLING postgresql://neondb_owner:npg_cAuvMXh2rFq9@ep-mute-salad-aopt7xit.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
+
+POSTGRES_PRISMA_URL     postgresql://neondb_owner:npg_cAuvMXh2rFq9@ep-mute-salad-aopt7xit-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require&pgbouncer=true
+
+JWT_SECRET              second_chance_jwt_2045_s3cr3t_key_xK9mP2nQ8rL4vT7w
+
+========================================================
+PENTING: Set semua untuk Environment: Production + Preview + Development
+========================================================
