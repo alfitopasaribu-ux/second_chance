@@ -5,7 +5,10 @@ import '../constants/app_constants.dart';
 
 class AuthState {
   final bool isAuthenticated;
+<<<<<<< HEAD
   final bool isCheckingAuth;
+=======
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
   final Map<String, dynamic>? user;
   final String? token;
   final bool isLoading;
@@ -13,17 +16,25 @@ class AuthState {
 
   const AuthState({
     this.isAuthenticated = false,
+<<<<<<< HEAD
     this.isCheckingAuth = false,
+=======
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
     this.user,
     this.token,
     this.isLoading = false,
     this.error,
   });
 
+<<<<<<< HEAD
 
   AuthState copyWith({
     bool? isAuthenticated,
     bool? isCheckingAuth,
+=======
+  AuthState copyWith({
+    bool? isAuthenticated,
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
     Map<String, dynamic>? user,
     String? token,
     bool? isLoading,
@@ -31,6 +42,7 @@ class AuthState {
   }) {
     return AuthState(
       isAuthenticated: isAuthenticated ?? this.isAuthenticated,
+<<<<<<< HEAD
       isCheckingAuth: isCheckingAuth ?? this.isCheckingAuth,
       user: user ?? this.user,
       token: token ?? this.token,
@@ -39,6 +51,14 @@ class AuthState {
     );
   }
 
+=======
+      user: user ?? this.user,
+      token: token ?? this.token,
+      isLoading: isLoading ?? this.isLoading,
+      error: error,
+    );
+  }
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 }
 
 class AuthNotifier extends StateNotifier<AuthState> {
@@ -50,9 +70,13 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
   Future<void> _loadToken() async {
+<<<<<<< HEAD
     state = state.copyWith(isCheckingAuth: true, error: null);
     final token = await _storage.read(key: 'auth_token');
 
+=======
+    final token = await _storage.read(key: 'auth_token');
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
     final username = await _storage.read(key: 'username');
     final email = await _storage.read(key: 'email');
     final userId = await _storage.read(key: 'user_id');
@@ -63,6 +87,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
         token: token,
         user: {'id': userId, 'username': username, 'email': email},
       );
+<<<<<<< HEAD
     } else {
       state = state.copyWith(isAuthenticated: false, token: null, user: null);
     }
@@ -71,6 +96,11 @@ class AuthNotifier extends StateNotifier<AuthState> {
   }
 
 
+=======
+    }
+  }
+
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
   Future<bool> login(String email, String password) async {
     state = state.copyWith(isLoading: true, error: null);
     try {

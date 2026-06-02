@@ -2,8 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<<<<<<< HEAD
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+=======
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -11,7 +14,11 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
+<<<<<<< HEAD
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+=======
+	<string>com.secondchance.app</string>
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -26,6 +33,7 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+<<<<<<< HEAD
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -49,6 +57,13 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+=======
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -56,8 +71,11 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+<<<<<<< HEAD
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+=======
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -66,5 +84,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
+=======
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
 </dict>
 </plist>

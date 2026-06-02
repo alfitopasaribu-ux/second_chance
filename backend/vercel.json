@@ -2,6 +2,7 @@
   "version": 2,
   "builds": [
     {
+<<<<<<< HEAD
       "src": "api/index.js",
       "use": "@vercel/node"
     }
@@ -11,5 +12,23 @@
       "src": "/(.*)",
       "dest": "api/index.js"
     }
+=======
+      "src": "api/**/*.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["lib/**", "dist/**"]
+      }
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/auth/login", "destination": "/api/auth/login" },
+    { "source": "/api/auth/register", "destination": "/api/auth/register" },
+    { "source": "/api/auth/profile", "destination": "/api/auth/profile" },
+    { "source": "/api/ai/chat", "destination": "/api/ai/chat" },
+    { "source": "/api/scenario", "destination": "/api/scenario/index" },
+    { "source": "/api/conversation", "destination": "/api/conversation/index" },
+    { "source": "/api/conversation/messages", "destination": "/api/conversation/messages" },
+    { "source": "/api/analysis", "destination": "/api/analysis/index" }
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
   ]
 }

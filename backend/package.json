@@ -1,6 +1,7 @@
 {
   "name": "second-chance-backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "scripts": {
     "start": "node api/index.js"
   },
@@ -14,3 +15,26 @@
     "jsonwebtoken": "^9.0.3"
   }
 }
+=======
+  "description": "Second Chance AI Emotional Simulator - Backend API",
+  "scripts": {
+    "dev": "vercel dev",
+    "build:local": "tsc",
+    "lint": "eslint . --ext .ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.0",
+    "@vercel/node": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "groq-sdk": "^0.3.3",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
+}
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a

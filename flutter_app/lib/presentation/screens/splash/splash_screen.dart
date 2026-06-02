@@ -23,6 +23,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
     _navigate();
   }
 
+<<<<<<< HEAD
   void _navigate() {
     if (!mounted) return;
 
@@ -42,6 +43,19 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
 
 
 
+=======
+  void _navigate() async {
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
+    final auth = ref.read(authProvider);
+    if (auth.isAuthenticated) {
+      context.go('/dashboard');
+    } else {
+      context.go('/login');
+    }
+  }
+
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
   @override
   void dispose() {
     _glowController.dispose();
@@ -134,6 +148,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
 
               const SizedBox(height: 60),
 
+<<<<<<< HEAD
               // Loading indicator (hanya saat cek token)
               Builder(builder: (context) {
                 final auth = ref.watch(authProvider);
@@ -166,6 +181,31 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
 
 
             
+=======
+              // Loading indicator
+              // ignore: prefer_const_constructors
+              SizedBox(
+                width: 200,
+                // ignore: prefer_const_constructors
+                child: LinearProgressIndicator(
+                  backgroundColor: AppColors.bgCardLight,
+                  color: AppColors.primary,
+                  minHeight: 2,
+                ),
+              ).animate().fadeIn(delay: 1200.ms, duration: 400.ms),
+
+              const SizedBox(height: 16),
+
+              const Text(
+                'MEMUAT SISTEM...',
+                style: TextStyle(
+                  color: AppColors.textMuted,
+                  fontSize: 10,
+                  letterSpacing: 3,
+                ),
+              ).animate().fadeIn(delay: 1400.ms),
+            ],
+>>>>>>> ba968ea74465efef7597cf98104212157e45199a
           ),
         ),
       ),
