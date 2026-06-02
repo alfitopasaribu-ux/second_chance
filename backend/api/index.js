@@ -14,10 +14,11 @@ const groq = new Groq({
 module.exports = async (req, res) => {
   try {
 
-    // =====================================================
+    req.body = req.body || {};
+
     // ROOT CHECK
-    // =====================================================
     if (req.method === "GET" && req.url === "/") {
+
       const result = await sql`SELECT NOW()`;
 
       return res.status(200).json({
@@ -29,24 +30,29 @@ module.exports = async (req, res) => {
       });
     }
 
-    // =====================================================
     // REGISTER
-    // =====================================================
-    if (req.method === "POST" && req.url.includes("register")) {
+    if (
+      req.method === "POST" &&
+      req.url.includes("register")
+    ) {
 
       const { username, email, password } = req.body;
 
       if (!username || !email || !password) {
         return res.status(400).json({
+          success: false,
           error: "Semua field wajib diisi",
         });
       }
 
-      const existingUser =
-        await sql`SELECT * FROM users WHERE email = ${email}`;
+      const existingUser = await sql`
+        SELECT * FROM users
+        WHERE email = ${email}
+      `;
 
       if (existingUser.length > 0) {
         return res.status(400).json({
+          success: false,
           error: "Email sudah digunakan",
         });
       }
@@ -75,18 +81,29 @@ module.exports = async (req, res) => {
       });
     }
 
-    // =====================================================
     // LOGIN
-    // =====================================================
-    if (req.method === "POST" && req.url.includes("login")) {
+    if (
+      req.method === "POST" &&
+      req.url.includes("login")
+    ) {
 
       const { email, password } = req.body;
 
-      const users =
-        await sql`SELECT * FROM users WHERE email = ${email}`;
+      if (!email || !password) {
+        return res.status(400).json({
+          success: false,
+          error: "Email dan password wajib diisi",
+        });
+      }
+
+      const users = await sql`
+        SELECT * FROM users
+        WHERE email = ${email}
+      `;
 
       if (users.length === 0) {
         return res.status(400).json({
+          success: false,
           error: "User tidak ditemukan",
         });
       }
@@ -101,6 +118,7 @@ module.exports = async (req, res) => {
 
       if (!validPassword) {
         return res.status(400).json({
+          success: false,
           error: "Password salah",
         });
       }
@@ -128,15 +146,17 @@ module.exports = async (req, res) => {
       });
     }
 
-    // =====================================================
     // AI CHAT
-    // =====================================================
-    if (req.method === "POST" && req.url.includes("chat")) {
+    if (
+      req.method === "POST" &&
+      req.url.includes("chat")
+    ) {
 
       const { message } = req.body;
 
       if (!message) {
         return res.status(400).json({
+          success: false,
           error: "Message wajib diisi",
         });
       }
@@ -164,16 +184,17 @@ module.exports = async (req, res) => {
       });
     }
 
-    // =====================================================
-    // ROUTE NOT FOUND
-    // =====================================================
     return res.status(404).json({
+      success: false,
       error: "Route tidak ditemukan",
     });
 
   } catch (error) {
 
+    console.error(error);
+
     return res.status(500).json({
+      success: false,
       error: error.message,
     });
 
