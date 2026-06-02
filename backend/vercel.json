@@ -1,8 +1,9 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
   "builds": [
     {
-      "src": "api/**/*.ts",
+      "src": "dist/api/**/*.js",
       "use": "@vercel/node"
     }
   ],
@@ -19,4 +20,5 @@
     }
   ]
 }
+
 
